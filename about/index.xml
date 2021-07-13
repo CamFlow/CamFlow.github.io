@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CamFlow project on CamFlow</title>
@@ -6,19 +6,15 @@
     <description>Recent content in CamFlow project on CamFlow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jan 2018 15:42:17 +0100</lastBuildDate>
-    
-	<atom:link href="https://camflow.org/about/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 27 Jan 2018 15:42:17 +0100</lastBuildDate><atom:link href="https://camflow.org/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Support</title>
       <link>https://camflow.org/about/support/</link>
       <pubDate>Sun, 28 Jan 2018 21:48:57 +0100</pubDate>
       
       <guid>https://camflow.org/about/support/</guid>
-      <description>CamFlow development started in 2014 at the University of Cambridge&amp;rsquo;s Opera Research Group (grant EPSRC EP/K011510/1). Further development has been supported by Harvard University&amp;rsquo;s Center for Research on Computation and Society as part of the Provenance@Harvard project (NSF grant SSI-1450277) and the University of Cambridge&amp;rsquo;s Digital Technology Group. Development is currently being supported by the University of Bristol and the University of British Columbia.
- .r_row { display: flex; text-align: center; } .</description>
+      <description>CamFlow development started in 2014 at the University of Cambridge&amp;rsquo;s Opera Research Group (grant EPSRC EP/K011510/1). Further development has been supported by Harvard University&amp;rsquo;s Center for Research on Computation and Society as part of the Provenance@Harvard project (NSF grant SSI-1450277) and the University of Cambridge&amp;rsquo;s Digital Technology Group. Development is currently being supported by the University of British Columbia.
+Thanks to Cloudsmith for hosting our packages.</description>
     </item>
     
     <item>

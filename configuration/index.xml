@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Configuration on CamFlow</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Configuration on CamFlow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jan 2018 15:42:17 +0100</lastBuildDate>
-    
-	<atom:link href="https://camflow.org/configuration/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 27 Jan 2018 15:42:17 +0100</lastBuildDate><atom:link href="https://camflow.org/configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capture configuration</title>
       <link>https://camflow.org/configuration/capture/</link>
@@ -19,7 +15,7 @@
       <guid>https://camflow.org/configuration/capture/</guid>
       <description>Sample configuration One of the strengths of CamFlow is the ability to fine-tune the provenance information it captures. Edit /etc/camflow.ini to modify the capture configuration. To apply a new configuration, reboot the machine.
 Alternatively when developing policy you can experiment using camflow CLI (see camflow -h). Policies defined through the CLI are not persisted in current release.
- Follows a sample /etc/camflow.ini configuration:
+Follows a sample /etc/camflow.ini configuration:
 [provenance] ;unique identifier for the machine, use hostid if set to 0 machine_id=0 ;enable provenance capture enabled=true ;record provenance of all kernel object all=false node_filter=directory node_filter=inode_unknown node_filter=char node_filter=envp ; propagate_node_filter=directory ; relation_filter=sh_read ; relation_filter=sh_write ; propagate_relation_filter=write [compression] ; enable node compression node=true edge=true duplicate=false [file] ;set opaque file opaque=/usr/bin/bash ;set tracked file ;track=/home/thomas/test.</description>
     </item>
     
