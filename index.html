@@ -190,7 +190,7 @@
     </div>
 
     <div class="version">
-            generated on May 4, 2022
+            generated on Sep 5, 2023
     </div>
 </div>
 
@@ -751,8 +751,11 @@ Policies defined through the CLI are not persisted in current release.</p>
 <span style="color:#75715e">; propagate_relation_filter=write</span>
 
 <span style="color:#00a8c8">[compression]</span>
+<span style="color:#75715e">; enable/disable versioning</span>
+<span style="color:#75af00">version</span><span style="color:#f92672">=</span><span style="color:#d88200">true</span>
 <span style="color:#75715e">; enable node compression</span>
 <span style="color:#75af00">node</span><span style="color:#f92672">=</span><span style="color:#d88200">true</span>
+<span style="color:#75715e">; enable edge compression</span>
 <span style="color:#75af00">edge</span><span style="color:#f92672">=</span><span style="color:#d88200">true</span>
 <span style="color:#75af00">duplicate</span><span style="color:#f92672">=</span><span style="color:#d88200">false</span>
 
@@ -775,20 +778,34 @@ Policies defined through the CLI are not persisted in current release.</p>
 <span style="color:#75715e">;record exchanged with local server</span>
 <span style="color:#75715e">;record=127.0.0.1/32:80</span>
 
+
 <span style="color:#00a8c8">[user]</span>
-<span style="color:#75715e">;opaque=vagrant</span>
 <span style="color:#75715e">;track=vagrant</span>
 <span style="color:#75715e">;propagate=vagrant</span>
+<span style="color:#75715e">;opaque=vagrant</span>
 
 <span style="color:#00a8c8">[group]</span>
-<span style="color:#75715e">;opaque=vagrant</span>
 <span style="color:#75715e">;track=vagrant</span>
 <span style="color:#75715e">;propagate=vagrant</span>
+<span style="color:#75715e">;opaque=vagrant</span>
 
 <span style="color:#00a8c8">[secctx]</span>
 <span style="color:#75715e">;track=system_u:object_r:bin_t:s0</span>
 <span style="color:#75715e">;propagate=system_u:object_r:bin_t:s0</span>
 <span style="color:#75715e">;opaque=system_u:object_r:bin_t:s0</span>
+
+<span style="color:#00a8c8">[relay]</span>
+<span style="color:#75715e">; those parameters set the size of the kernel relay buffer</span>
+<span style="color:#75715e">; more info about relay here:</span>
+<span style="color:#75715e">; https://www.kernel.org/doc/html/latest/filesystems/relay.html</span>
+<span style="color:#75715e">; size of relay buffer is equal to (1 &lt;&lt; buff_exp) * subuf_nb</span>
+<span style="color:#75715e">; you may want to change this value if you observe event drops</span>
+<span style="color:#75715e">; (i.e. graph with missing edges and nodes), you can check drops</span>
+<span style="color:#75715e">; through the command:</span>
+<span style="color:#75715e">; camflow --drop</span>
+<span style="color:#75715e">; be careful when changing those values.</span>
+<span style="color:#75af00">buff_exp</span><span style="color:#f92672">=</span><span style="color:#d88200">20</span>
+<span style="color:#75af00">subuf_nb</span><span style="color:#f92672">=</span><span style="color:#d88200">8</span>
 </code></pre></div><h2 id="configuration-parameters">Configuration parameters</h2>
 <p>Following is a list of the parameters and their effects, broken down by section.
 A &ldquo;boolean&rdquo; parameter accepts values &ldquo;true&rdquo; or &ldquo;false&rdquo;.</p>
@@ -998,6 +1015,12 @@ In this example compression may be undesirable.</p>
 <!-- raw HTML omitted -->
 <p>Further information about these parameters may be gleaned by perusing the <a href="https://github.com/CamFlow/camflow-dev/tree/master/security/provenance/include">header files</a> in the kernel module.</p>
 <!-- raw HTML omitted -->
+<h3 id="relay">relay</h3>
+<p>This set the size of the kernel relay buffer.</p>
+<!-- raw HTML omitted -->
+<p>If you notice event losses, do adjust this parameters (this may happen with systems under heavy workload).
+You can check the number of dropped events using <code>camflow --drop</code>.</p>
+<!-- raw HTML omitted -->
 
     </div>
 </section>
@@ -1020,8 +1043,8 @@ In this example compression may be undesirable.</p>
 <span style="color:#75715e">;output=fifo</span>
 <span style="color:#75af00">output</span><span style="color:#f92672">=</span><span style="color:#d88200">log</span>
 
-<span style="color:#75af00">format</span><span style="color:#f92672">=</span><span style="color:#d88200">w3c</span>
-<span style="color:#75715e">;format=spade_json</span>
+<span style="color:#75715e">;format=w3c</span>
+<span style="color:#75af00">format</span><span style="color:#f92672">=</span><span style="color:#d88200">spade_json</span>
 
 <span style="color:#00a8c8">[log]</span>
 <span style="color:#75af00">path</span><span style="color:#f92672">=</span><span style="color:#d88200">/tmp/audit.log</span>
